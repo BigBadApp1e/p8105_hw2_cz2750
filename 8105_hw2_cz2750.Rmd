@@ -136,6 +136,7 @@ combined_dataset <- bind_rows(mr_trash_wheel,
 combined_dataset
 ```
 #Describe the Data
+
 I named the dataset "combined_dataset".The dataset "combined_dataset" is a combined dataset that includes data from Mr. Trash Wheel, Professor Trash Wheel and Gwynnda.There are a total of `r nrow(combined_dataset)` observations in the combined dataset, representing various garbage collection events.
 
 Key Variables:
@@ -163,6 +164,7 @@ baseline_data = read.csv(file = "MCI_baseline.csv", skip=1) %>%
 baseline_data
 ```
 #Describe the Data
+
 Important steps in the import process and related functions of the dataset: we use the `janitor` function to clean up the column names, `mutate` to code the categorical variables, to convert the data types if necessary, and to deal with missing data in preparation for further analysis of the dataset.
 
 How many participants were recruited: r nrow(baseline_data)
@@ -184,6 +186,7 @@ amyloid_data = read.csv(file = "mci_amyloid.csv", skip=1) %>%
 amyloid_data
 ```
 #Describe the Data
+
 Important steps in the import process and related functions of the dataset: We use `read_csv` to read the CSV file and skip the first line. Next, column names are normalized and cleaned using the `janitor::clean_names()` function. Categorized variables were coded for analysis and data types were converted as needed.
 
 How many participants were recruited: r nrow(distinct(amyloid_data, study_id))
@@ -200,6 +203,7 @@ amyloid <- amyloid_data %>%
 ```
 
 #Describe
+
 Participants unique to the baseline dataset:
 r nrow(baseline)
 Participants unique to the amyloid dataset: 
@@ -212,6 +216,7 @@ ADATASET <- baseline_data %>%
 ```
 
 #Describe the Data
+
 I named the dataset "ADATASET".The"ADATASET" retains participants that appear in both the "baseline" and "amyloid" datasets.
 
 #Export the result as a CSV
